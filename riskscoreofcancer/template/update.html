@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(73, 113, 139);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .rounded-button {
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container"></div>
+    <h1>Update Now</h1>
+    <form method="post">
+        {% csrf_token %}
+
+        {% for field in form %}
+            <div class="form-group">
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {{ field }}
+            </div>
+        {% endfor %}
+
+        <input type="submit" name="s" value="Submit" class="rounded-button">
+    </form>
+        <!-- <textarea name="" id="" cols="50" rows="20">
+            Patient_Id:{{up.m_Patient_Id}}
+            Age :  {{up.m_Age}}
+            GENDER  :  {{up.m_Gender}}
+            BMI :  {{up.m_BMI}}
+            BSA   :  {{up.m_BSA}}
+            ECOG:{{up.m_ECOG}}
+            Addiction to Tabacco/alcohol: {{up.m_Substanceabuse}}
+            Diabetes CI:{{up.m_DiabetesCI}}
+            HeartDisease:{{up.m_HeartDiseaseCI}}
+            Ejection Fraction:{{up.m_EjectionFraction}}
+            WeightLoss:{{up.m_Weightloss}}
+            Haemoglobin value:{{up.m_Haemoglobin}}
+            WBC:{{up.m_WBC}}
+            ANC:{{up.m_ANC}}
+            Platlet Count:{{up.m_platletCount}}
+            Sr:Creatinine:{{up.m_Creatininel}}
+            Creatinine clearance:{{up.m_Creatininec}}
+            Billirubin(mg):{{up.m_Bilirubin}}
+            AST/ALT:{{up.m_AST}}
+            Albumin:{{up.m_Albumin}}
+            Spo2%:{{up.m_SpO2}}
+            Heart Rate:{{up.m_Heartrate}}
+            Prior Hospitalization:{{up.m_priorHospitalization}}
+            BP:{{up.m_BP}}
+            Distance:A patient can walk(in mtrs):{{up.m_Walking}}
+            Class of Chemo Agents:{{up.m_Drug}}
+            Number of chemo agents:{{up.m_Chemoagent}}
+            Dose Intensity:{{up.m_Dosingagent}}
+            Setting:{{up.m_Setting}}
+            Social Support:{{up.m_SocialSupport}}
+            Distance from home(km):{{up.m_DistanceFH}}
+            Mental State:{{up.m_MentalState}}
+            Cancer Type:{{up.m_CancerType}}
+            Grade:{{up.m_Gradeg}}
+            Stage IV Burden:{{up.m_StageBurden}}
+            Previos Chemo Tolerance:{{up.m_ChemoTolerance}}
+            PS During Chemo:{{up.m_DuringChemo}}
+            Cycle:{{up.m_Cycle}}
+        
+        </textarea> -->
+        <input type="submit" value="Update Patient" name="" id="">
+    </form>
+
+    
+</div>    
+</body>
+</html>
